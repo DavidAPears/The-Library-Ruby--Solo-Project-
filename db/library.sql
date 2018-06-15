@@ -1,0 +1,21 @@
+-- DROP TABLE loans;
+-- DROP TABLE books;
+-- DROP TABLE members;
+--
+-- CREATE TABLE books
+-- (
+--   id SERIAL8 primary key,
+--
+-- );
+--
+-- CREATE TABLE members
+-- (
+--   id SERIAL8 primary key,
+--
+-- );
+--
+-- CREATE TABLE loans
+-- (
+--   id SERIAL8 primary key,
+--
+-- );

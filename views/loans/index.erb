@@ -1,0 +1,18 @@
+<h1>Loans</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/laons/new">New Loan</a>
+</p>
+
+<ul>
+  <% for loan in @loans %>
+  <li>
+  <p><%= loan.member.name %> <%= @actions.sample %> <%= loan.member.name %> </p>
+    <p>
+      <form action="/loans/<%= loan.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </p>
+  </li>
+  <% end %>
+</ul>

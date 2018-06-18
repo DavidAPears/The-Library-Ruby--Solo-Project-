@@ -1,0 +1,23 @@
+<h1>New Loan</h1>
+
+<form action="/loans" method="post">
+  <label>
+  Select a book:
+    <select name="book_id">
+      <% for book in @books %>
+      <option value="<%= book.id %>"><%= book.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Select a member:
+    <select name="member_id">
+      <% for member in @victims %>
+      <option value="<%= member.id %>"><%= member.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input class="btn btn--action" type='submit' value="loan!">
+</form>

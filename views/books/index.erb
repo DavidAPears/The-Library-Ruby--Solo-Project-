@@ -1,0 +1,16 @@
+<h1>Books</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th>Author</th>
+  </tr>
+  <% for book in @books %>
+  <tr>
+    <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
+    <td>|</td>
+    <td><%= book.author %></td>
+  </tr>
+  <% end %>
+</table>

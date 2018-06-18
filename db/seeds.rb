@@ -22,7 +22,7 @@ genre2.save()
 
 book1 = Book.new({
   "title" => "The Great Gatsby",
-  "author" => "F Scott Fitzgerald"
+  "author" => "F Scott Fitzgerald",
   "genre_id" => genre1.id
 })
 
@@ -30,8 +30,8 @@ book1.save()
 
 book2 = Book.new({
   "title" => "Harry Potter",
-  "author" => "J K Rowling"
-  "genre_id" => genre1.id
+  "author" => "J K Rowling",
+  "genre_id" => genre2.id
 })
 
 book2.save()
@@ -49,7 +49,7 @@ member1.save()
 member2 = Member.new({
   "first_name" => "Fred",
   "last_name" => "Bloggs",
-  "post_code" => "EH7 1XL",
+  "post_code" => "EH7 1SL",
   "email_address" => "fredblogs@hotmail.com",
   "active_membership" => false
 })
@@ -59,8 +59,8 @@ member2.save()
 loan1 = Loan.new({
   "member_id" => member1.id,
   "book_id" => book1,
-  "loan_start_date" => Time.now
-  "loan_length" => 14
+  "loan_start_date" => Time.now,
+  "loan_length" => 14,
   "book_returned" => false
 })
 
@@ -69,11 +69,12 @@ loan1.save()
 loan2 = Loan.new({
   "member_id" => member2.id,
   "book_id" => book2,
-  "loan_start_date" => Time.now
-  "loan_length" => 14
+  "loan_start_date" => Time.now,
+  "loan_length" => 14,
   "book_returned" => false
 })
 
+loan2.save()
 
 binding.pry
 nil

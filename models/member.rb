@@ -13,6 +13,7 @@ class Member
     @active_membership = options['active_membership']
   end
 
+# CREATE 'C'
   def save()
     sql = "INSERT INTO members
     (
@@ -30,6 +31,33 @@ class Member
     values = [@first_name, @last_name, @post_code, @email_address, @active_membership]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+  end
+
+# READ 'R'
+
+  def self.all()
+    sql = "SELECT * FROM members"
+    results = SqlRunner.run( sql )
+    return results.map { |member| Member.new( member ) }
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM members
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Member.new( results.first )
+  end
+
+# UPDATE 'U'
+
+
+
+# DELETE 'D'
+
+  def self.delete_all
+    sql = "DELETE FROM members"
+    SqlRunner.run( sql )
   end
 
 

@@ -1,6 +1,6 @@
-/* input[type="submit"] {
+input[type="submit"] {
   text-transform: uppercase;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Raleway', cursive;
 }
 
 select {
@@ -9,8 +9,8 @@ select {
  margin: 15px 0;
  font-size: 0.8em;
  -webkit-appearance: none;
- background: url('/images/hazard.png') 96% / 15% no-repeat papayawhip;
- font-family: 'Merriweather', serif;
+ background: url('/images/books_icon.jpeg') 96% / 15% no-repeat papayawhip;
+ font-family: 'Raleway', serif;
  border: 1px solid #eee;
  display: block;
 }
@@ -18,4 +18,4 @@ select {
 :focus {
   outline-color: transparent;
   outline-style: none;
-} */
+}

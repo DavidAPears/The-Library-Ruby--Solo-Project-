@@ -1,11 +1,11 @@
-<h1>Genre <%= @genre.genre %></h1>
+<h1>Author <%= @author.author %></h1>
 
-<p>Genre: <%= @genre.genre %></p>
+<p>Author: <%= @author.author %></p>
 
-<h3>Members who have read this genre</h3>
+<h3>Members who have read this Author</h3>
 
 <ul>
-  <% @genre.members.each do |member| %>
+  <% @author.members.each do |member| %>
   <li><%= member.name %></li>
   <% end %>
 </ul>

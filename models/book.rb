@@ -17,7 +17,7 @@ class Book
     sql = "INSERT INTO books
     (
       title,
-      author,
+      author_id,
       genre_id
     )
     VALUES

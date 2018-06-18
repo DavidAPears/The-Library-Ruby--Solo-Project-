@@ -1,11 +1,11 @@
-<h1>Author <%= @author.author %></h1>
-
 <p>Author: <%= @author.author %></p>
 
-<h3>Members who have read this Author</h3>
 
-<ul>
-  <% @author.members.each do |member| %>
-  <li><%= member.name %></li>
-  <% end %>
-</ul>
+
+
+
+<p><a href="/authors/<%= @author.id %>/edit">Edit Author</a></p>
+
+<form method="post" action="/authors/<%= @author.id %>/delete">
+  <input type="Sumbit Change" value="Cancel Edit"/>
+</form>

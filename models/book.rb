@@ -30,6 +30,19 @@ class Book
     @id = results.first()['id'].to_i
   end
 
+  def members
+    sql = "SELECT members.* FROM members INNER JOIN loans ON loans.member_id = members.id WHERE book_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return Member.map_items(results) 
+  end
+
+  def self.map_items(book_data)
+    result = book_data.map { |book|
+    Book.new( book ) }
+    return result
+  end
+
   # READ 'R'
 
     def self.all()
@@ -48,9 +61,30 @@ class Book
 
   # UPDATE 'U'
 
-
+    def update()
+      sql = "UPDATE books
+      SET
+      (
+        title,
+        author_id,
+        genre_id
+      ) =
+      (
+        $1, $2, $3
+      )
+      WHERE id = $4"
+      values = [@title, @author_id, @genre_id]
+      SqlRunner.run( sql, values )
+    end
 
   # DELETE 'D'
+
+    def delete()
+      sql = "DELETE FROM books
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run( sql, values )
+    end
 
     def self.delete_all
       sql = "DELETE FROM books"

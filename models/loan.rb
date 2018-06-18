@@ -13,9 +13,7 @@ class Loan
     @book_returned = options['book_returned']
   end
 
-  # def member()
-  #
-  # end
+
 
 # CREATE 'C'
 
@@ -37,6 +35,7 @@ class Loan
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
+
 
   # READ 'R'
 
@@ -60,10 +59,17 @@ class Loan
 
   # DELETE 'D'
 
-    def self.delete_all
-      sql = "DELETE FROM loans"
-      SqlRunner.run( sql )
-    end
+  def delete()
+    sql = "DELETE FROM loans
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM loans"
+    SqlRunner.run( sql )
+  end
 
 
 end

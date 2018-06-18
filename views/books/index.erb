@@ -1,17 +1,26 @@
-<h1>Books</h1>
+h1>Books</h1>
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>First Name</th>
     <th></th>
     <th>Author</th>
+    <th></th>
+    <th>Genre</th>
+    <th></th>
   </tr>
+
   <% for book in @books %>
+
   <tr>
-    <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
+    <td><a href="/bookss/<%= book.id %>"><%= book.title %></a></td>
     <td>|</td>
-    <td><a href="/authors/<%= author.id %>"><%= author.author %></a></td>
-    <td><%= book.author %></td>
+    <td><a href="/books/<%= book.id %>"><%= book.author_id %></a></td>
+    <td>|</td>
+    <td><a href="/books/<%= book.id %>"><%= book.genre_id %></a></td>
+    <td>|</td>
   </tr>
+
   <% end %>
+  
 </table>

@@ -1,18 +1,32 @@
 <h1>Loans</h1>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/loans/new">Check a book out / New Loan</a>
-</p>
+<table>
+  <tr>
+    <th>Member</th>
+    <th></th>
+    <th>Book</th>
+    <th></th>
+    <th>Loan Start Date</th>
+    <th></th>
+    <th>Length Of Loan</th>
+    <th></th>
+    <th>Has Book Been Returned? </th>
+  </tr>
 
-<ul>
   <% for loan in @loans %>
-  <li>
-  <p><%= loan.member.nme %> <%= @actions.sample %> <%= loan.member.name %> </p>
-    <p>
-      <form action="/loans/<%= loan.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
-      </form>
-    </p>
-  </li>
+
+  <tr>
+    <td><a href="/loans/<%= loan.id %>"><%= loan.member_id %></a></td>
+    <td>|</td>
+    <td><a href="/loans/<%= loan.id %>"><%= loan.book_id %></a></td>
+    <td>|</td>
+    <td><a href="/loans/<%= loan.id %>"><%= loan.loan_start_date %></a></td>
+    <td>|</td>
+    <td><%= loan.loan_length %></td>
+    <td>|</td>
+    <td><a href="/loans/<%= loan.id %>"><%= loan.book_returned%></a></td>
+    <td>|</td>
+  </tr>
+
   <% end %>
-</ul>
+</table>

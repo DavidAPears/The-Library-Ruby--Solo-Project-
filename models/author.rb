@@ -44,9 +44,28 @@ class Author
 
   # UPDATE 'U'
 
-
+  def update()
+    sql = "UPDATE authors
+    SET
+    (
+      author
+    ) =
+    (
+      $1
+    )
+    WHERE id = $2"
+    values = [@author]
+    SqlRunner.run( sql, values )
+  end
 
   # DELETE 'D'
+
+  def delete()
+    sql = "DELETE FROM authors
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
 
     def self.delete_all
       sql = "DELETE FROM authors"

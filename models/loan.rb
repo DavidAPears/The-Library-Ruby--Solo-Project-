@@ -13,9 +13,9 @@ class Loan
     @book_returned = options['book_returned']
   end
 
-  def member()
-    
-  end
+  # def member()
+  #
+  # end
 
 # CREATE 'C'
 

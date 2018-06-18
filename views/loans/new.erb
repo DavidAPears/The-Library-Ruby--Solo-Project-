@@ -1,4 +1,4 @@
-<h1>New Loan</h1>
+<h1>Check a book out</h1>
 
 <form action="/loans" method="post">
   <label>
@@ -13,7 +13,7 @@
   <label>
     Select a member:
     <select name="member_id">
-      <% for member in @victims %>
+      <% for member in @members %>
       <option value="<%= member.id %>"><%= member.last_name %></option>
       <% end %>
     </select>

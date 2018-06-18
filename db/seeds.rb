@@ -3,13 +3,14 @@ require_relative( "../models/genre.rb" )
 require_relative( "../models/book.rb" )
 require_relative( "../models/member.rb" )
 require_relative( "../models/loan.rb" )
+
 require("pry")
 
-loan.delete_all()
-book.delete_all()
-member.delete_all()
-genre.delete_all()
-author.delete_all()
+# loan.delete_all()
+# book.delete_all()
+# member.delete_all()
+# genre.delete_all()
+# author.delete_all()
 
 # TABLE 1 - 'AUTHORS'
 

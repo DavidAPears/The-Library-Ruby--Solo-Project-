@@ -10,7 +10,7 @@ require_relative( '../models/author.rb' )
 
 also_reload( '../models/*' )
 
-get '/loans' do
-  @loans = Loan.all()
-  erb(:'loans/index')
-end
+# get '/loans' do
+#   @loans = Loan.all()
+#   erb(:'loans/index')
+# end

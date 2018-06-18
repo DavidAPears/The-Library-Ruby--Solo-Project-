@@ -1,8 +1,8 @@
-<h1>Title:<%= @book.title %></h1>
+<h1>Title:<%= @authors.name %></h1>
 
-<p>Author: <%= @book.author %></p>
+<p>Author: <%= @author.name %></p>
 
-<h3>Members who have read:</h3>
+<h3>Members who have read this book:</h3>
 
 <ul>
   <% @book.members.each do |member| %>

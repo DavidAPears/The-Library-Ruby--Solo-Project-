@@ -21,7 +21,7 @@ CREATE TABLE books
 (
   id SERIAL8 primary key,
   title VARCHAR(255),
-  author-id references authors(id)
+  author_id INT8 references authors(id),
   genre_id INT8 references genres(id)
 );
 

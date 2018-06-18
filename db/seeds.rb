@@ -58,7 +58,7 @@ member2.save()
 
 loan1 = Loan.new({
   "member_id" => member1.id,
-  "book_id" => book1,
+  "book_id" => book1.id,
   "loan_start_date" => Time.now,
   "loan_length" => 14,
   "book_returned" => false
@@ -68,7 +68,7 @@ loan1.save()
 
 loan2 = Loan.new({
   "member_id" => member2.id,
-  "book_id" => book2,
+  "book_id" => book2.id,
   "loan_start_date" => Time.now,
   "loan_length" => 14,
   "book_returned" => false

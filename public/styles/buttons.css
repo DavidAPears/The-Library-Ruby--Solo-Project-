@@ -1,14 +1,15 @@
 .btn {
+  background-color: #f44242;
   border:0px none;
   border-radius: 3%;
-  padding: 8px 12px;
-  color: black;
+  padding: 7px 10px;
+  color: white;
   cursor:pointer;
   font-family: 'Raleway', sans-serif;
 }
 
 .btn--danger {
-  background-color: darkred;
+  background-color: #f44242;
 }
 
 .btn--danger:hover {

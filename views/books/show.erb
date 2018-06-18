@@ -1,11 +1,11 @@
-<h1>Book <%= @book.title %></h1>
+<h1>Title:<%= @book.title %></h1>
 
 <p>Author: <%= @book.author %></p>
 
 <h3>Members who have read:</h3>
 
 <ul>
-  <% @book.members.each do |victim| %>
-  <li><%= member.name %></li>
+  <% @book.members.each do |member| %>
+  <li><%= member.first_name, member.last_name%></li>
   <% end %>
 </ul>

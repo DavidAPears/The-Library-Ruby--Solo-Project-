@@ -5,7 +5,7 @@
   Select a book:
     <select name="book_id">
       <% for book in @books %>
-      <option value="<%= book.id %>"><%= book.name %></option>
+      <option value="<%= book.id %>"><%= book.title %></option>
       <% end %>
     </select>
   </label>
@@ -14,10 +14,10 @@
     Select a member:
     <select name="member_id">
       <% for member in @victims %>
-      <option value="<%= member.id %>"><%= member.name %></option>
+      <option value="<%= member.id %>"><%= member.last_name %></option>
       <% end %>
     </select>
   </label>
 
-  <input class="btn btn--action" type='submit' value="loan!">
+  <input class="btn btn--action" type='submit' value="loan made!">
 </form>

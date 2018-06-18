@@ -1,12 +1,37 @@
+require_relative( "../models/author.rb" )
 require_relative( "../models/genre.rb" )
 require_relative( "../models/book.rb" )
 require_relative( "../models/member.rb" )
 require_relative( "../models/loan.rb" )
 require("pry")
 
-# loan.delete_all()
-# book.delete_all()
-# member.delete_all()
+loan.delete_all()
+book.delete_all()
+member.delete_all()
+genre.delete_all()
+author.delete_all()
+
+# TABLE 1 - 'AUTHORS'
+
+author1 = Author.new({
+  "author" => "F Scott Fitzgerald"
+})
+
+author1.save()
+
+author2 = Author.new({
+  "author" => "J K Rowling"
+})
+
+author2.save()
+
+author3 = Author.new({
+  "author" => "Stephen Hawking"
+})
+
+author3.save()
+
+# TABLE 2 - 'GENRES'
 
 genre1 = Genre.new({
   "genre" => "Historical Fiction"
@@ -21,14 +46,16 @@ genre2 = Genre.new({
 genre2.save()
 
 genre3 = Genre.new({
-  "genre" => "Popular science"
+  "genre" => "Popular Science"
 })
 
 genre3.save()
 
+# TABLE 3 - 'BOOKS'
+
 book1 = Book.new({
   "title" => "The Great Gatsby",
-  "author" => "F Scott Fitzgerald",
+  "author_id" => author1.id,
   "genre_id" => genre1.id
 })
 
@@ -36,7 +63,7 @@ book1.save()
 
 book2 = Book.new({
   "title" => "Harry Potter",
-  "author" => "J K Rowling",
+  "author_id" => author2.id,
   "genre_id" => genre2.id
 })
 
@@ -44,11 +71,13 @@ book2.save()
 
 book3 = Book.new({
   "title" => "A Brief History of Time",
-  "author" => "Stephen Hawking",
+  "author_id" => author3.id,
   "genre_id" => genre3.id
 })
 
 book3.save()
+
+# TABLE 4 - 'MEMBERS'
 
 member1 = Member.new({
   "first_name" => "David",
@@ -79,6 +108,8 @@ member3 = Member.new({
 })
 
 member3.save()
+
+# TABLE 5 - 'LOANS'
 
 loan1 = Loan.new({
   "member_id" => member1.id,

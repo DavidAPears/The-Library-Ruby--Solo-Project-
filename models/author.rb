@@ -1,27 +1,27 @@
 require_relative( '../db/sql_runner' )
 
-class Genre
+class Author
 
-  attr_reader( :id, :genre )
+  attr_reader( :id, :author )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @genre = options['genre']
+    @author = options['author']
   end
 
 # CREATE 'C'
 
   def save()
-    sql = "INSERT INTO genres
+    sql = "INSERT INTO authors
     (
-      genre
+      author
     )
     VALUES
     (
       $1
     )
     RETURNING id"
-    values = [@genre]
+    values = [@author]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -29,17 +29,17 @@ class Genre
   # READ 'R'
 
     def self.all()
-      sql = "SELECT * FROM genres"
+      sql = "SELECT * FROM authors"
       results = SqlRunner.run( sql )
-      return results.map { |genre| Genre.new( genre ) }
+      return results.map { |author| Author.new( author ) }
     end
 
     def self.find( id )
-      sql = "SELECT * FROM genres
+      sql = "SELECT * FROM authors
       WHERE id = $1"
       values = [id]
       results = SqlRunner.run( sql, values )
-      return Genre.new( results.first )
+      return Author.new( results.first )
     end
 
   # UPDATE 'U'
@@ -49,7 +49,7 @@ class Genre
   # DELETE 'D'
 
     def self.delete_all
-      sql = "DELETE FROM genres"
+      sql = "DELETE FROM authors"
       SqlRunner.run( sql )
     end
 

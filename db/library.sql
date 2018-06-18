@@ -1,8 +1,15 @@
 DROP TABLE loans;
-DROP TABLE books;
 DROP TABLE members;
+DROP TABLE books;
 DROP TABLE genres;
+DROP TABLE authors;
 
+
+CREATE TABLE authors
+(
+  id SERIAL8 primary key,
+  author VARCHAR(255)
+);
 
 CREATE TABLE genres
 (
@@ -14,7 +21,7 @@ CREATE TABLE books
 (
   id SERIAL8 primary key,
   title VARCHAR(255),
-  author VARCHAR(255),
+  author-id references authors(id)
   genre_id INT8 references genres(id)
 );
 

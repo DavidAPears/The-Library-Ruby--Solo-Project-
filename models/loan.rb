@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Loan
 
-  attr_reader( :id, :member_id, :book_id, :id, :loan_start_date, :loan_length, :book_returned )
+  attr_reader( :id, :member_id, :book_id, :loan_start_date, :loan_length, :book_returned )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -12,6 +12,12 @@ class Loan
     @loan_length = options['loan_length']
     @book_returned = options['book_returned']
   end
+
+  def member()
+    
+  end
+
+# CREATE 'C'
 
   def save()
     sql = "INSERT INTO loans
@@ -31,6 +37,33 @@ class Loan
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
+
+  # READ 'R'
+
+    def self.all()
+      sql = "SELECT * FROM loans"
+      results = SqlRunner.run( sql )
+      return results.map { |loan| Loan.new( loan ) }
+    end
+
+    def self.find( id )
+      sql = "SELECT * FROM loans
+      WHERE id = $1"
+      values = [id]
+      results = SqlRunner.run( sql, values )
+      return Loan.new( results.first )
+    end
+
+  # UPDATE 'U'
+
+
+
+  # DELETE 'D'
+
+    def self.delete_all
+      sql = "DELETE FROM loans"
+      SqlRunner.run( sql )
+    end
 
 
 end

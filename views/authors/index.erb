@@ -1,7 +1,7 @@
 <h1>Authors</h1>
 <br></br>
 <form method="get" action="/authors/new">
-    <button type="submit">Register new AUTHOR</button>
+    <button type="submit">Register a new AUTHOR !</button>
 </form>
 <br></br>
 
@@ -10,14 +10,10 @@
     <th>Author</th>
     <th></th>
   </tr>
-
   <% for author in @authors %>
   <tr>
-
     <td><a href="/authors/<%= author.id %>"><%= author.author %></a></td>
     <td>|</td>
   </tr>
-
   <% end %>
-
 </table>

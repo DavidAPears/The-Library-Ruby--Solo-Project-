@@ -1,11 +1,6 @@
-<h1>Genre <%= @genre.genre %></h1>
+<p>Genre: <%= @enre.genre %></p>
 
-<p>Genre: <%= @genre.genre %></p>
-
-<h3>Members who have read</h3>
-
-<ul>
-  <% @book.members.each do |member| %>
-  <li><%= member.name %></li>
-  <% end %>
-</ul>
+<p><a href="/genres/<%= @genre.id %>/edit">Edit Genre</a></p>
+<form method="post" action="/genres/<%= @genre.id %>/delete">
+  <input type="Sumbit" value="Canel Edit"/>
+</form>

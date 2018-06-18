@@ -1,11 +1,9 @@
-<h1>Title:<%= @authors.name %></h1>
+<p>Title: <%= @book.title %></p>
+<p>Author: <%= @book.author_id %></p>
+<p>Genre: <%= @book.genre_id %></p>
 
-<p>Author: <%= @author.name %></p>
 
-<h3>Members who have read this book:</h3>
-
-<ul>
-  <% @book.members.each do |member| %>
-  <li><%= member.first_name, member.last_name%></li>
-  <% end %>
-</ul>
+<p><a href="/books/<%= @book.id %>/edit">Edit Book</a></p>
+<form method="post" action="/books/<%= @book.id %>/delete">
+  <input type="Submit Change " value="Restart Edit "/>
+</form>

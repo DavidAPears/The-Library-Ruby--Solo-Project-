@@ -2,12 +2,13 @@
 
 <table>
   <tr>
-    <th>Genres</th>
+    <th>Genre</th>
     <th></th>
   </tr>
   <% for genre in @genres %>
   <tr>
-    <td><a href="/genres/<%= genre.id %>"><%= genre.genre %></a></td>
+    <td><a href="/genress/<%= genre.id %>"><%= genre.genre %></a></td>
+    <td>|</td>
   </tr>
   <% end %>
 </table>

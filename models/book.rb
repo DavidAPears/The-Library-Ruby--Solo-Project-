@@ -30,11 +30,13 @@ class Book
     @id = results.first()['id'].to_i
   end
 
+# INNER JOIN (Books & Members)
+
   def members
     sql = "SELECT members.* FROM members INNER JOIN loans ON loans.member_id = members.id WHERE book_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return Member.map_items(results) 
+    return Member.map_items(results)
   end
 
   def self.map_items(book_data)

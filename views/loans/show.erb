@@ -1,0 +1,7 @@
+<p>Loan: <%= @loan.loan %></p>
+
+<p><a href="/loans/<%= @loan.id %>/edit">Edit Loan</a></p>
+
+<form method="post" action="/loans/<%= @loan.id %>/delete">
+  <input type="Sumbit" value="Register Loan"/>
+</form>

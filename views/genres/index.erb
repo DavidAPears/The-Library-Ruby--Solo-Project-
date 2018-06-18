@@ -1,4 +1,9 @@
 <h1>Genres</h1>
+<br></br>
+<form method="get" action="/genres/new">
+    <button type="submit">Register now GENRE</button>
+</form>
+<br></br>
 
 <table>
   <tr>
@@ -7,7 +12,7 @@
   </tr>
   <% for genre in @genres %>
   <tr>
-    <td><a href="/genress/<%= genre.id %>"><%= genre.genre %></a></td>
+    <td><a href="/genres/<%= genre.id %>"><%= genre.genre %></a></td>
     <td>|</td>
   </tr>
   <% end %>

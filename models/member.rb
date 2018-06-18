@@ -34,6 +34,8 @@ class Member
     @id = results.first()['id'].to_i
   end
 
+# INNER JOIN (Member & Books)
+
   def books
     sql = "SELECT books.* FROM books INNER JOIN loans ON loans.book_id = books.id WHERE member_id = $1;"
     values = [@id]

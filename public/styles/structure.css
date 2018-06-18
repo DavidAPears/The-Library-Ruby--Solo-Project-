@@ -2,7 +2,7 @@ body {
   background: black url('/images/library.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-  color: papayawhip;
+  color: black;
   font-family: 'Raleway', serif;
   padding: 0px;
   margin: 0px;
@@ -56,7 +56,7 @@ main {
 }
 
 .flex--row {
-  flex-direction: row;
+  flex-direction: column;
 }
 
 #content {

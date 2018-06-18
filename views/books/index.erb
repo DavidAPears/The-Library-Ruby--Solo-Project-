@@ -1,4 +1,9 @@
-h1>Books</h1>
+<h1>Books</h1>
+<br></br>
+<form method="get" action="/books/new">
+    <button type="submit">Register now BOOK</button>
+</form>
+<br></br>
 
 <table>
   <tr>
@@ -13,7 +18,7 @@ h1>Books</h1>
   <% for book in @books %>
 
   <tr>
-    <td><a href="/bookss/<%= book.id %>"><%= book.title %></a></td>
+    <td><a href="/books/<%= book.id %>"><%= book.title %></a></td>
     <td>|</td>
     <td><a href="/books/<%= book.id %>"><%= book.author_id %></a></td>
     <td>|</td>
@@ -22,5 +27,5 @@ h1>Books</h1>
   </tr>
 
   <% end %>
-  
+
 </table>

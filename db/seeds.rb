@@ -3,7 +3,7 @@ require_relative( "../models/book.rb" )
 require_relative( "../models/member.rb" )
 require_relative( "../models/loan.rb" )
 require("pry")
-#
+
 # loan.delete_all()
 # book.delete_all()
 # member.delete_all()
@@ -20,6 +20,12 @@ genre2 = Genre.new({
 
 genre2.save()
 
+genre3 = Genre.new({
+  "genre" => "Popular science"
+})
+
+genre3.save()
+
 book1 = Book.new({
   "title" => "The Great Gatsby",
   "author" => "F Scott Fitzgerald",
@@ -35,6 +41,14 @@ book2 = Book.new({
 })
 
 book2.save()
+
+book3 = Book.new({
+  "title" => "A Brief History of Time",
+  "author" => "Stephen Hawking",
+  "genre_id" => genre3.id
+})
+
+book3.save()
 
 member1 = Member.new({
   "first_name" => "David",
@@ -56,6 +70,16 @@ member2 = Member.new({
 
 member2.save()
 
+member3 = Member.new({
+  "first_name" => "Jessica",
+  "last_name" => "Smith",
+  "post_code" => "EH2 3UT",
+  "email_address" => "jessica375@yahoo.co.uk",
+  "active_membership" => true
+})
+
+member3.save()
+
 loan1 = Loan.new({
   "member_id" => member1.id,
   "book_id" => book1.id,
@@ -75,6 +99,16 @@ loan2 = Loan.new({
 })
 
 loan2.save()
+
+loan3 = Loan.new({
+  "member_id" => member3.id,
+  "book_id" => book3.id,
+  "loan_start_date" => Time.now,
+  "loan_length" => 14,
+  "book_returned" => false
+})
+
+loan3.save()
 
 binding.pry
 nil

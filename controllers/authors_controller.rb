@@ -1,5 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require('pry')
 require_relative( '../models/author.rb' )
 require_relative( '../models/book.rb' )
 
@@ -12,18 +13,37 @@ get '/authors' do
   erb(:'authors/index')
 end
 
-# To search authors by id
+# To add new authors (1)
+
+get '/authors/new' do
+  @authors = Author.all
+  erb(:"authors/new")
+end
 
 get '/authors/:id' do
   @author = Author.find(params['id'].to_i)
   erb(:"authors/show")
 end
 
-# To add new authors
+# To add new authors (2)
 
-post '/authors/new' do
-  Author.add(params[:id])
-  redirect to("/authors/new")
+post '/authors' do
+  author = Author.new(params)
+  author.save
+  redirect to("/authors")
+end
+
+#To edit 'authors'
+
+post '/authors/:id' do
+  author = Author.new(params)
+  author.update()
+  redirect to("/authors")
+end
+
+get '/authors/:id/edit' do
+  @author=  Author.find(params[:id])
+  erb(:"authors/edit")
 end
 
 # To delete 'author'

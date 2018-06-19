@@ -6,11 +6,13 @@ require_relative( "../models/loan.rb" )
 
 require("pry")
 
-# loan.delete_all()
+
 # book.delete_all()
 # member.delete_all()
 # genre.delete_all()
 # author.delete_all()
+# loan.delete_all()
+
 
 # TABLE 1 - 'AUTHORS'
 
@@ -137,7 +139,7 @@ loan3 = Loan.new({
   "book_id" => book3.id,
   "loan_start_date" => Time.now,
   "loan_length" => 14,
-  "book_returned" => false
+  "book_returned" => true
 })
 
 loan3.save()

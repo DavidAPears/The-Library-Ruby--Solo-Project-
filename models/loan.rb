@@ -1,4 +1,5 @@
 require_relative( '../db/sql_runner' )
+require('pry')
 
 class Loan
 
@@ -14,7 +15,7 @@ class Loan
   end
 
   def returned?()
-      @book_returned ? 'Yes' : 'No'
+    @book_returned == 't' ? 'Yes' : 'No'
   end
 
 

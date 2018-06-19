@@ -1,5 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+
 require_relative( '../models/member.rb' )
 require_relative( '../models/loan.rb' )
 
@@ -26,9 +27,26 @@ post '/members' do
   redirect to("/members")
 end
 
+
+#To edit 'members'
+
+
+post '/members/:id' do
+  member = Member.new(params)
+  member.update()
+  redirect to("/members")
+end
+
+get '/members/:id/edit' do
+  @member =  Member.find(params[:id])
+  erb(:"members/edit")
+end
+
+
 # To delete 'members'
 
-post '/members/:id/delete' do
-  Member.destroy(params[:id])
+get '/members/:id/delete' do
+  member = Member.find(params[:id])
+  member.delete()
   redirect to("/members")
 end

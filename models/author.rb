@@ -54,7 +54,7 @@ class Author
       $1
     )
     WHERE id = $2"
-    values = [@author]
+    values = [@author, @id]
     SqlRunner.run( sql, values )
   end
 

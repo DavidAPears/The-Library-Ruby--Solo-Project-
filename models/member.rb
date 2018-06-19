@@ -1,4 +1,5 @@
 require_relative( '../db/sql_runner' )
+require('pry')
 
 class Member
 
@@ -14,8 +15,11 @@ class Member
   end
 
   def active?()
-    @active_membership ? 'Yes' : 'No'
+    @active_membership == 't' ? 'Yes' : 'No'
   end
+
+  # WHY ISN'T THIS (ABOVE) WORKING?!? IT WORKS PERFECTLY ON THE LOAN.RB FILE WHICH HAS THE SAME SET UP, TRUE IS RETURNING YES THERE!!!!!
+
 
 # CREATE 'C'
 

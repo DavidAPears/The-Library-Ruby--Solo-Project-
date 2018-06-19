@@ -52,7 +52,7 @@ post '/loans/:id' do
 end
 
 get '/loans/:id/edit' do
-  @loan =  Loan.find(params[:id])
+  @loan = Loan.find(params[:id])
   erb(:"loans/edit")
 end
 

@@ -2,7 +2,8 @@ require_relative( '../db/sql_runner' )
 
 class Genre
 
-  attr_reader( :id, :genre )
+  attr_reader( :id )
+  attr_accessor( :genre)
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -49,14 +50,14 @@ class Genre
   def update()
     sql = "UPDATE genres
     SET
-    (
+
       genre
-    ) =
-    (
+     =
+
       $1
-    )
+    
     WHERE id = $2"
-    values = [@genre]
+    values = [@genre, @id]
     SqlRunner.run( sql, values )
   end
 

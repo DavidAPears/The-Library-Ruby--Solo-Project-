@@ -45,15 +45,11 @@ get '/books/:id/edit' do
   erb(:"books/edit")
 end
 
-
-
-
 # To search books by id
 get '/books/:id' do
   @book = Book.find(params['id'].to_i)
   erb(:"books/show")
 end
-
 
 # To delete 'books'
 

@@ -1,4 +1,4 @@
-<form method="post" action="/genres">
+<form method="post" action="/genres/<%= @genre.id  %> ">
 
   <label for="genre-field">Genre:</label>
   <input
@@ -9,5 +9,5 @@
   />
 
 
-  <input type="submit" value="Add new genre!">
+  <input type="submit" value="Update Genre!">
 </form>

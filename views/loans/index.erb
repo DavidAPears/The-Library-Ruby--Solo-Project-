@@ -1,9 +1,11 @@
 <h1>Loans</h1>
-<br>
+
+<h2>
   <a href="/loans/new">
     <img src="/images/addicon.jpeg" alt="loan book out" style="width:42px;height:42px;border:0">
   </a>
-</br>
+</h2>
+
 <table>
   <tr>
     <th>Member</th>
@@ -12,9 +14,13 @@
     <th></th>
     <th>Loan Start Date</th>
     <th></th>
-    <th>Length Of Loan</th>
+    <th>Length Of Loan (days) </th>
     <th></th>
     <th>Has Book Been Returned? </th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
   <% for loan in @loans %>
@@ -30,8 +36,14 @@
     <td>|</td>
     <td><a href="/loans/<%= loan.id %>"><%= loan.returned?%></a></td>
     <td>|</td>
+    <td>|</td>
+    <td><a href="/loans/<%= loan.id %>/edit">
+      <img src="/images/editicon.jpeg" alt="Edit" style="width:42px;height:42px;border:0" class="icon">
+    </a></td>
+    <td><a href="/loans/<%= loan.id %>/delete">
+      <img src="/images/deleteicon.jpeg" alt="Delete" style="width:42px;height:42px;border:0" class="icon">
+    </a></td>
+    <td>|</td>
   </tr>
-
   <% end %>
-
-</table>
+  </table>

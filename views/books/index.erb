@@ -1,13 +1,14 @@
 <h1>Books</h1>
-<br>
+
+<h2>
   <a href="/books/new">
     <img src="/images/addicon.jpeg" alt="Add new book" style="width:42px;height:42px;border:0">
   </a>
-</br>
+</h2>
 
 <table>
   <tr>
-    <th>First Name</th>
+    <th>Title</th>
     <th></th>
     <th>Author</th>
     <th></th>
@@ -32,13 +33,10 @@
       <img src="/images/editicon.jpeg" alt="Edit" style="width:42px;height:42px;border:0" class="icon">
     </a></td>
     <td>|</td>
-    <!--Delete needs to be post request in a form -->
     <td><a href="/books/<%= book.id %>/delete">
       <img src="/images/deleteicon.jpeg" alt="Delete" style="width:42px;height:42px;border:0" class="icon">
     </a></td>
     <td>|</td>
   </tr>
-
   <% end %>
-
 </table>

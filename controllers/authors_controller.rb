@@ -29,6 +29,6 @@ end
 # To delete 'author'
 
 post '/authors/:id/delete' do
-  Authir.destroy(params[:id])
+  Author.destroy(params[:id])
   redirect to("/authors")
 end

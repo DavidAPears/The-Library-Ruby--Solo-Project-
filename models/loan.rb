@@ -13,6 +13,9 @@ class Loan
     @book_returned = options['book_returned']
   end
 
+  def returned?()
+      @book_returned ? 'Yes' : 'No'
+  end
 
 
 # CREATE 'C'

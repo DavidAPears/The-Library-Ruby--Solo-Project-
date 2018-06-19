@@ -1,5 +1,5 @@
 body {
-  background: black url('/images/library.jpg');
+  /* background: black url('/images/library.jpg'); */
   background-size: 100%;
   background-repeat: no-repeat;
   color: black;
@@ -60,6 +60,6 @@ main {
 }
 
 #content {
-  border-left: 1px solid darkred;
+  border-left: 1px solid ;
   padding-left: 25px;
 }

@@ -13,6 +13,8 @@ class Book
 
 # CREATE 'C'
 
+#Write method sleect * from aurhors table where id is = @authorid 
+
   def save()
     sql = "INSERT INTO books
     (

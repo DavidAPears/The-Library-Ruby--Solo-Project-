@@ -1,9 +1,10 @@
 <h1>Members</h1>
-<br></br>
-<form method="get" action="/members/new">
-    <button type="submit">Register a new MEMBER !</button>
-</form>
-<br></br>
+
+<br>
+  <a href="/members/new">
+    <img src="/images/addicon.jpeg" alt="Add new member" style="width:42px;height:42px;border:0">
+  </a>
+</br>
 
 <table>
   <tr>
@@ -16,6 +17,10 @@
     <th>E-mail</th>
     <th></th>
     <th>Active Membership</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
   <% for member in @members %>
   <tr>
@@ -27,14 +32,17 @@
     <td>|</td>
     <td><%= member.email_address %></td>
     <td>|</td>
-    <td><a href="/members/<%= member.id %>"><%= member.active_membership
-%>
-      <% if true
-        puts "Yes"
-        else
-        puts "No - ** DO NOT LOAN ** (until membership renewed)"
-        end %></a></td>
-
+    <td><a href="/members/<%= member.id %>"><%= member.active_membership %>
+    </a></td>
+    <td>|</td>
+    <td><a href="/members/<%= member.id %>/edit">
+      <img src="/images/editicon.jpeg" alt="Edit" style="width:42px;height:42px;border:0" class="icon">
+    </a></td>
+    <td>|</td>
+    <!--Delete needs to be post request in a form -->
+    <td><a href="/members/<%= member.id %>/delete">
+      <img src="/images/deleteicon.jpeg" alt="Delete" style="width:42px;height:42px;border:0" class="icon">
+    </a></td>
     <td>|</td>
   </tr>
   <% end %>

@@ -1,18 +1,30 @@
 <h1>Genres</h1>
-<br></br>
-<form method="get" action="/genres/new">
-    <button type="submit">Register new GENRE !</button>
-</form>
-<br></br>
-
+<br>
+  <a href="/genres/new">
+    <img src="/images/addicon.jpeg" alt="Add new genre" style="width:42px;height:42px;border:0">
+  </a>
+</br>
 <table>
   <tr>
     <th>Genre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
     <th></th>
   </tr>
   <% for genre in @genres %>
   <tr>
     <td><a href="/genres/<%= genre.id %>"><%= genre.genre %></a></td>
+    <td>|</td>
+    <td><a href="/genres/<%= genre.id %>/edit">
+      <img src="/images/editicon.jpeg" alt="Edit" style="width:42px;height:42px;border:0" class="icon">
+    </a></td>
+    <td>|</td>
+    <!--Delete needs to be post request in a form -->
+    <td><a href="/genres/<%= genre.id %>/delete">
+      <img src="/images/deleteicon.jpeg" alt="Delete" style="width:42px;height:42px;border:0" class="icon">
+    </a></td>
     <td>|</td>
   </tr>
   <% end %>

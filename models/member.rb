@@ -13,6 +13,10 @@ class Member
     @active_membership = options['active_membership']
   end
 
+  def active?()
+    @active_membership ? 'Yes' : 'No'
+  end
+
 # CREATE 'C'
 
   def save()

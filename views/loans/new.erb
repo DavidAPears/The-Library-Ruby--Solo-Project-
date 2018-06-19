@@ -27,12 +27,17 @@
   id="email-address-field"
   />
 
-  <label for="active-membership-field">Active Membership:</label>
-  <input
-  type="boolean"
-  name="active_membership"
-  id="active-membership-field"
-  />
+  <p>Active Membership:</p>
+  <input type="radio" id="active-membership-yes"
+     name="active-membership" value="true">
+    <label for="active-membership-yes">Yes</label>
+
+    <input type="radio" id="active-membership-no"
+       name="active-membership" value="false">
+      <label for="active-membership-no">No</label>
+
+
+
 
   <input type="submit" value="Loan book out!">
 </form>

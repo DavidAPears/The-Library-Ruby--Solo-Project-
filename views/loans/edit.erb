@@ -1,47 +1,39 @@
 <form method="post" action="/loans/<%= @loan.id %>">
 
-  <label for="first-name-field">First Name:</label>
+  <label for="member-id-field">Member ID:</label>
   <input
   type="text"
-  name="first_name"
-  id="first-name-field"
-  value = "<%= @member.first_name %>"
+  name="member-id"
+  id="member-id-field"
+  value = "<%= @loan.member_id %>"
   />
 
-  <label for="last-name-field">Last Name:</label>
+  <label for="book-id-field">Book ID:</label>
   <input
   type="text"
-  name="last_name"
-  id="last-name-field"
-  value = "<%= @member.last_name %>"
+  name="book-id"
+  id="book-id-field"
+  value = "<%= @loan.book_id %>"
   />
 
-  <label for="postcode-field">Post Code:</label>
+  <label for="loan-start-date-field">Loan Start Date:</label>
   <input
-  type="text"
-  name="post_code"
-  id="postcode-field"
-  value = "<%= @member.post_code %>"
+  type="date"
+  name="loan-start-date"
+  id="loan-start-date-field"
+  value = "<%= @loan.loan_start_date %>"
   />
 
-  <label for="email-address-field">Email Address:</label>
+
+  <label for="loan-length-field">Loan Length:</label>
   <input
-  type="text"
-  name="last_name"
-  id="email-address-field"
-  value = "<%= @member.email_address %>"
+  type="number"
+  name="loan-length"
+  min="1"
+  max="21"
+  id="loan-length-field"
+  value = "<%= @loan.loan_length %>"
   />
-
-  <p>Active Membership:</p>
-  <input type="radio" id="active-membership-yes"
-     name="active-membership" value="true">
-    <label for="active-membership-yes">Yes</label>
-
-    <input type="radio" id="active-membership-no"
-       name="active-membership" value="false">
-      <label for="active-membership-no">No</label>
-
-
 
 
   <input type="submit" value="Edit existing Loan!">

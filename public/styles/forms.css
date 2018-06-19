@@ -3,7 +3,7 @@ input[type="submit"] {
   font-family: 'Raleway', cursive;
 }
 
-select {
+/* select {
  width: 150px;
  padding: 3px 30px 5px 5px;
  margin: 15px 0;
@@ -13,7 +13,7 @@ select {
  font-family: 'Raleway', serif;
  border: 1px solid #eee;
  display: block;
-}
+} */
 
 :focus {
   outline-color: transparent;

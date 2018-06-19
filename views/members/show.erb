@@ -3,9 +3,3 @@
 <p>Last Name: <%= @member.last_name %></p>
 <p>Post Code: <%= @member.post_code %></p>
 <p>Email Address: <%= @member.email_address %></p>
-
-
-<p><a href="/members/<%= @member.id %>/edit">Edit Member</a></p>
-<form method="post" action="/members/<%= @member.id %>/delete">
-  <input type="Submit" value="Cancel Edit"/>
-</form>

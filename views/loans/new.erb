@@ -1,43 +1,29 @@
 <form method="post" action="/loans">
-  <label for="first-name-field">First Name:</label>
+
+  <select name="member_id">
+    <% for member in @members %>
+    <option value="<%= member.id %> ">
+    <%= "#{member.first_name} #{member.last_name}"%> </option>
+    <% end %>
+  </select>
+
+  <select name="book_id">
+    <% for book in @books %>
+    <option value="<%= book.id %> "> <%= book.title%> </option>
+    <% end %>
+  </select>
+
+  <label for="loan_length">
+    Length Of Loan (days)
+  </label>
+
   <input
-  type="text"
-  name="first_name"
-  id="first-name-field"
-  />
-
-  <label for="last-name-field">Last Name:</label>
-  <input
-  type="text"
-  name="last_name"
-  id="last-name-field"
-  />
-
-  <label for="postcode-field">Post Code:</label>
-  <input
-  type="text"
-  name="post_code"
-  id="postcode-field"
-  />
-
-  <label for="email-address-field">Email Address:</label>
-  <input
-  type="text"
-  name="last_name"
-  id="email-address-field"
-  />
-
-  <p>Active Membership:</p>
-  <input type="radio" id="active-membership-yes"
-     name="active-membership" value="true">
-    <label for="active-membership-yes">Yes</label>
-
-    <input type="radio" id="active-membership-no"
-       name="active-membership" value="false">
-      <label for="active-membership-no">No</label>
-
-      
-
+  id ="loan-length"
+  name="loan_length"
+  type="number"
+  min="1"
+  max="21">
 
   <input type="submit" value="Loan book out!">
+  
 </form>

@@ -16,7 +16,7 @@ get '/loans' do
   erb(:'loans/index')
 end
 
-# To add new 'loans'
+#To add new loans
 
 get '/loans/new' do
   @members = Member.all
@@ -24,10 +24,36 @@ get '/loans/new' do
   erb(:"loans/new")
 end
 
+
+# To Show individ loan
+get '/loans/:id' do
+  @loan = Loan.find(params['id'].to_i)
+  erb(:"loans/show")
+end
+
+# To add new authors (2)
+
 post '/loans' do
-  loan = Loan.new(params)
+  data = params
+  data['loan_start_date'] = Time.now
+  loan = Loan.new(data)
   loan.save
   redirect to("/loans")
+end
+
+
+
+#To edit 'loans'
+
+post '/loans/:id' do
+  loan = Loan.new(params)
+  loan.update()
+  redirect to("/loans")
+end
+
+get '/loans/:id/edit' do
+  @loan =  Loan.find(params[:id])
+  erb(:"loans/edit")
 end
 
 # To delete 'loans'

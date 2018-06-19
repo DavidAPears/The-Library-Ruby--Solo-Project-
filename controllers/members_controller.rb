@@ -6,7 +6,7 @@ require_relative( '../models/loan.rb' )
 
 also_reload( '../models/*' )
 
-# To retrieve all loans:
+# To retrieve all members:
 
 get '/members' do
   @members = Member.all()
@@ -29,7 +29,6 @@ end
 
 
 #To edit 'members'
-
 
 post '/members/:id' do
   member = Member.new(params)

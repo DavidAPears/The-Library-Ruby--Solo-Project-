@@ -70,7 +70,7 @@ main {
   flex-direction: row;
 }
 
-#content {
+content {
   border-left: 1px solid ;
   padding-left: 25px;
 }

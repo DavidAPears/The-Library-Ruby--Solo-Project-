@@ -18,8 +18,9 @@ class Member
     @active_membership == 't' ? 'Yes' : 'No'
   end
 
-  # WHY ISN'T THIS (ABOVE) WORKING?!? IT WORKS PERFECTLY ON THE LOAN.RB FILE WHICH HAS THE SAME SET UP, TRUE IS RETURNING YES THERE!!!!!
-
+  def deactivate?()
+    @active_membership == 't' ? 'Yes' : 'No'
+  end
 
 # CREATE 'C'
 
@@ -108,5 +109,30 @@ def self.delete_all
   SqlRunner.run( sql )
 end
 
+# Method to 'Deactive' membership...
+
+# def deactivate()
+#   sql = "UPDATE members SET ( active_membership ) = ( false ) WHERE id = $1"
+#   values = [@id]
+#   SqlRunner.run( sql, values )
+# end
+
+def deactivate()
+  sql = "UPDATE members
+  SET
+  (
+    first_name,
+    last_name,
+    post_code,
+    email_address,
+    active_membership
+  ) =
+  (
+    $1, $2, $3, $4, $5
+  )
+  WHERE id = $6"
+  values = [@first_name, @last_name, @post_code, @email_address, @active_membership, @id]
+  SqlRunner.run( sql, values )
+end
 
 end

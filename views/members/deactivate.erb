@@ -1,0 +1,26 @@
+<h1></h1>
+
+<h2>Caution. You are about to deavtivate this membership</h2>
+<br>
+<h3>Please confirm to proceed</h3>
+<br>
+<br>
+
+<form method="post" action="/members/<%= @member.id %>">
+
+
+  <!-- <label for="active-membership-field">Active Membership:</label>
+  <input
+  type="boolean"
+  name="active_membership"
+  id="active-membership-field"
+  value = "<%= @member.active_membership %>"
+  /> -->
+
+<!-- BELOW: HTML codes for active/deactivate radio buttons  -->
+  <!-- <input id="Radio1" type="radio" class="radio" name="active_membership" data-value="true" />Keep Active -->
+  <input id="Radio2" type="radio" class="radio" name="active_membership" data-value="false" />Deactivate
+
+  <input type="submit" value="confirm!">
+
+</form>

@@ -45,15 +45,7 @@ class Author
   # UPDATE 'U'
 
   def update()
-    sql = "UPDATE authors
-    SET
-    (
-      author
-    ) =
-    (
-      $1
-    )
-    WHERE id = $2"
+    sql = "UPDATE authors SET author = $1 WHERE id = $2"
     values = [@author, @id]
     SqlRunner.run( sql, values )
   end

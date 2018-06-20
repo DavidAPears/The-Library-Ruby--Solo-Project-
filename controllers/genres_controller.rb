@@ -64,6 +64,6 @@ end
 # To delete 'genres'
 
 post '/genres/:id/delete' do
-  Genre.destroy(params[:id])
+  Genre.delete(params[:id])
   redirect to("/genres")
 end

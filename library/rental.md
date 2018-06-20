@@ -1,18 +1,20 @@
-Store managers should be able to create new stock items.
-Store managers should be able to delete existing stock items.
-Store managers should be able to add new customers to their list of registered customers.
-Store managers should be able to update the details of their existing customers.
-Store managers should be able to remove customers.
-Store managers should be able to assign stock items to customers.
-Store managers should be able to check rentals back into available stock.
-Store managers should be able to view a list of all of their rentals.
-Create a filter dependant on product attributes (eg cars: hatchback/SUV/estate)
+COMPLETED TASKS:
+DONE - Store managers should be able to add new customers to their list of registered customers
+DONE - Store managers should be able to update the details of their existing customers.
+DONE - Store managers should be able to view a list of all of their rentals.
+DONE - store managers should be able to assign stock items to customers.
+
+
+INCOMPLETE TASKS:
+NOT DONE - Store managers should be able to create new stock items.
+NOT DONE - Store managers should be able to delete existing stock items.
+NOT DONE - Store managers should be able to remove customers.
+NOT DONE - Store managers should be able to check rentals back into available stock.
+NOT DONE - Create a filter dependant on product attributes (eg cars: hatchback/SUV/estate)
+
 
 --
-
-
-
-# Rental Shop
+# RENTAL SHOP
 
 You have been approached by the management of a rental store and have been asked to create a system to manage their stock items.  They need a system that allows them to manage rentals and their customers.
 

@@ -24,8 +24,7 @@ get '/loans/new' do
   erb(:"loans/new")
 end
 
-
-# To Show individ loan
+# To Show individual loan
 get '/loans/:id' do
   @loan = Loan.find(params['id'].to_i)
   erb(:"loans/show")
@@ -39,6 +38,12 @@ post '/loans' do
   loan = Loan.new(data)
   loan.save
   redirect to("/loans")
+end
+
+post '/loans/:id/return' do
+  # find the loan with :id
+  # return its book
+  # redirect to loans index
 end
 
 
@@ -55,6 +60,7 @@ get '/loans/:id/edit' do
   @loan = Loan.find(params[:id])
   erb(:"loans/edit")
 end
+
 
 # To delete 'loans'
 

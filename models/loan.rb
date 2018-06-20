@@ -40,6 +40,11 @@ class Loan
     @id = results.first()['id'].to_i
   end
 
+  def return_book()
+    @book_returned = true
+    update()
+  end
+
 
   # READ 'R'
 
@@ -59,7 +64,23 @@ class Loan
 
   # UPDATE 'U'
 
-
+  def update()
+    sql = "UPDATE loans
+    SET
+    (
+      member_id,
+      book_id,
+      loan_start_date,
+      loan_length,
+      book_returned
+    ) =
+    (
+      $1, $2, $3, $4, $5
+    )
+    WHERE id = $6"
+    values = [@member_id, @book_id, @loan_start_date, @loan_length, @book_returned, @id]
+    SqlRunner.run( sql, values )
+  end
 
   # DELETE 'D'
 

@@ -48,15 +48,7 @@ class Genre
   # UPDATE 'U'
 
   def update()
-    sql = "UPDATE genres
-    SET
-
-      genre
-     =
-
-      $1
-    
-    WHERE id = $2"
+    sql = "UPDATE genres SET genre = $1 WHERE id = $2"
     values = [@genre, @id]
     SqlRunner.run( sql, values )
   end

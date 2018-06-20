@@ -53,7 +53,8 @@ end
 
 # To delete 'books'
 
-post '/books/:id/delete' do
-  Book.destroy(params[:id])
+get '/books/:id/delete' do
+  book = Book.find(params[:id])
+  book.delete()
   redirect to("/books")
 end

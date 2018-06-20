@@ -48,7 +48,7 @@ class Member
     sql = "SELECT books.* FROM books INNER JOIN loans ON loans.book_id = books.id WHERE member_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return Member.map_items(results)
+    return Book.map_items(results)
   end
 
   def self.map_items(book_data)

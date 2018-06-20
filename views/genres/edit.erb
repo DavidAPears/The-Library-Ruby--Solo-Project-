@@ -1,13 +1,11 @@
-<form method="post" action="/genres/<%= @genre.id  %> ">
+<form method="post" action="/genres/<%= @genre.id  %>">
 
-  <label for="genre-field">Genre:</label>
+  <label for="genre-field">Genre</label>
   <input
   type="text"
   name="genre"
   id="genre-field"
   value = "<%= @genre.genre %>"
   />
-
-
   <input type="submit" value="Update Genre!">
 </form>

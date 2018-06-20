@@ -1,6 +1,6 @@
 <h1>Loans</h1>
 
-]<h2>
+<h2>
   <a href="./">
     <img src="/images/logo.png" alt="Home Page" style="width:250px;height:150px;border:0;position:fixed; top:0; right:0;">
   </a>
@@ -36,9 +36,9 @@
   <% for loan in @loans %>
 
   <tr>
-    <td><a href="/members/<%= loan.member.id %>"><%= loan.member.first_name %></a></td>
+    <td><a href="/members/<%= loan.member.first_name %>"><%= loan.member.first_name %></a></td>
     <td>|</td>
-    <td><a href="/members/<%= loan.book_id %>"><%= loan.book.title %></a></td>
+    <td><a href="/members/<%= loan.book.title %>"><%= loan.book.title %></a></td>
     <td>|</td>
     <td><a href="/loans/<%= loan.id %>"><%= loan.loan_start_date %></a></td>
     <td>|</td>

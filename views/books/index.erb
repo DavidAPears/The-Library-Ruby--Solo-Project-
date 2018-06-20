@@ -2,7 +2,7 @@
 
 <!-- BELOW IS A SEARCH BAR - PART OF EXTENSIONS!   -->
 
-<!-- <h1>
+<h1>
   <form>
   <div>
     <input type="search" id="mySearch" name="q"
@@ -10,7 +10,7 @@
     <button>Search</button>
   </div>
 </form>
-</h1> -->
+</h1>
 
 <h2>
   <a href="./">
@@ -46,9 +46,9 @@
     <td>|</td>
 
 
-    <td><a href="/books/<%= book.author.author %>"><%= book.author.author%></a></td>
+    <td><a href="/authors/<%= book.author.id %>"><%= book.author.author%></a></td>
     <td>|</td>
-    <td><a href="/books/<%= book.genre.genre %>"><%= book.genre.genre %></a></td>
+    <td><a href="/genres/<%= book.genre.id %>"><%= book.genre.genre %></a></td>
 
     <!-- <td><a href="/books/<%= book.id %>/edit">
       <img src="/images/editicon.jpeg" alt="Edit" style="width:42px;height:42px;border:0" class="icon">

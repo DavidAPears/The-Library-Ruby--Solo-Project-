@@ -54,7 +54,7 @@ class Member
 
   def self.map_items(book_data)
     result = book_data.map { |book|
-    Book.new( book ) }
+    Member.new( book ) }
     return result
   end
 

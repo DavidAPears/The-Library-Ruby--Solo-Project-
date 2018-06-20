@@ -19,6 +19,10 @@ get '/books/new' do
   erb(:"books/new")
 end
 
+get '/books/error' do
+  erb(:"books/error")
+end
+
 get '/books/:id' do
   @book = Book.find(params['id'].to_i)
   erb(:"books/show")
@@ -31,6 +35,7 @@ post '/books' do
   book.save
   redirect to("/books")
 end
+
 
 #To edit 'books'
 
@@ -61,6 +66,9 @@ end
 
 get '/books/:id/delete' do
   book = Book.find(params[:id])
-  book.delete()
-  redirect to("/books")
+  if book.members.count == 0
+    book.delete()
+    redirect to("/books")
+  end
+  redirect to("/books/error")
 end

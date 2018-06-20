@@ -118,21 +118,8 @@ end
 # end
 
 def deactivate()
-  sql = "UPDATE members
-  SET
-  (
-    first_name,
-    last_name,
-    post_code,
-    email_address,
-    active_membership
-  ) =
-  (
-    $1, $2, $3, $4, $5
-  )
-  WHERE id = $6"
-  values = [@first_name, @last_name, @post_code, @email_address, @active_membership, @id]
-  SqlRunner.run( sql, values )
+  @active_membership = false
+  update()
 end
 
 end

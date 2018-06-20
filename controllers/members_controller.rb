@@ -1,6 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-
+require( 'pry' )
 require_relative( '../models/member.rb' )
 require_relative( '../models/loan.rb' )
 
@@ -59,8 +59,14 @@ get '/members/:id/deactivate' do
   erb(:"members/deactivate")
 end
 
-post '/members/:id' do
-  member = Member.new(params)
+post '/members/:id/deactivate' do
+  member =  Member.find(params[:id])
   member.deactivate()
+
+  redirect to("/members")
+end
+
+post '/members/:id' do
+  member =  Member.find(params[:id])
   redirect to("/members")
 end

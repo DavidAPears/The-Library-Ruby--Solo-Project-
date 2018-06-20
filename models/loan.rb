@@ -96,6 +96,7 @@ class Loan
     SqlRunner.run( sql )
   end
 
+# Below helps call names/titles rather than id's
   def member()
     sql = "SELECT * FROM members
     WHERE id = $1"

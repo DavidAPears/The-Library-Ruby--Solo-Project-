@@ -102,4 +102,21 @@ class Book
     end
 
 
+# Below helps call names/titles rather than id's
+  def author()
+    sql = "SELECT * FROM authors
+    WHERE id = $1"
+    values = [@author_id]
+    results = SqlRunner.run( sql, values )
+    return Author.new( results.first )
+  end
+
+  def genre()
+    sql = "SELECT * FROM genres
+    WHERE id = $1"
+    values = [@genre_id]
+    results = SqlRunner.run( sql, values )
+    return Genre.new( results.first )
+  end
+
 end

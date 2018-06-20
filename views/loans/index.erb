@@ -11,9 +11,9 @@
     <img src="/images/bookout.png" alt="Loan Book Out!" style="width:200px;height:200px;border:0">
   </a>
 
-  <a href="/loans/edit">
+  <!-- <a href="/loans/edit">
     <img src="/images/bookin.png" alt="Log returned Book!" style="width:200px;height:200px;border:0">
-  </a>
+  </a> -->
 </h2>
 
 <table>
@@ -29,8 +29,8 @@
     <th>Has Book Been Returned? </th>
     <th></th>
     <th>Edit Existing loan </th>
-    <!-- <th></th>
-    <th></th> -->
+    <th></th>
+    <th>Book Returned </th>
   </tr>
 
   <% for loan in @loans %>
@@ -50,10 +50,9 @@
       <img src="/images/editicon.jpeg" alt="Edit" style="width:42px;height:42px;border:0" class="icon">
     </a></td>
     <td>|</td>
-    <!-- <td><a href="/loans/<%= loan.id %>/delete">
-      <img src="/images/deleteicon.jpeg" alt="Delete" style="width:42px;height:42px;border:0" class="icon">
+    <td><a href="/loans/<%= loan.id %>/returned">
+      <img src="/images/bookin.png" alt="Returned" style="width:42px;height:42px;border:0" class="icon">
     </a></td>
-    <td>|</td> -->
   </tr>
   <% end %>
   </table>

@@ -1,6 +1,8 @@
 <h1>Books</h1>
 
-<h1>
+<!-- BELOW IS A SEARCH BAR - PART OF EXTENSIONS!   -->
+
+<!-- <h1>
   <form>
   <div>
     <input type="search" id="mySearch" name="q"
@@ -8,7 +10,7 @@
     <button>Search</button>
   </div>
 </form>
-</h1>
+</h1> -->
 
 <h2>
   <a href="./">
@@ -32,10 +34,11 @@
     <th></th>
     <th>Genre</th>
     <th></th>
+    <th>Edit</th>
     <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Delete</th>
+    <th></th><
+
   </tr>
 
   <% for book in @books %>
@@ -58,7 +61,6 @@
     <td><a href="/books/<%= book.id %>/delete">
       <img src="/images/deleteicon.jpeg" alt="Delete" style="width:42px;height:42px;border:0" class="icon">
     </a></td>
-    <td>|</td>
   </tr>
   <% end %>
 </table>

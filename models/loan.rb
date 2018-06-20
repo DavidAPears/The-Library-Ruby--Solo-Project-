@@ -113,7 +113,10 @@ class Loan
     return Book.new( results.first )
   end
 
-
+  def returned()
+    @book_returned = true
+    update()
+  end
 
 
 end

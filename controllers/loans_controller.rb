@@ -68,3 +68,22 @@ post '/loans/:id/delete' do
   Loan.destroy(params[:id])
   redirect to("/loans")
 end
+
+# Create a route that will call on returned (books)
+
+get '/loans/:id/returned' do
+  @loan =  Loan.find(params[:id])
+  erb(:"loans/returned")
+end
+
+post '/loans/:id/returned' do
+  loan = Loan.find(params[:id])
+  loan.returned()
+  
+  redirect to("/loans")
+end
+
+post '/loans/:id' do
+  loan = Loan.find(params[:id])
+  redirect to("/loans")
+end

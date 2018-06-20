@@ -5,11 +5,9 @@ DONE - Store managers should be able to view a list of all of their rentals.
 DONE - store managers should be able to assign stock items to customers.
 DONE - Store managers should be able to create new stock items.
 DONE - Store managers should be able to delete existing stock items.
-
+DONE - Store managers should be able to remove customers. [Customers can be DEACTIVATED, don't want delete!]
 
 INCOMPLETE TASKS:
-NOT DONE - Store managers should be able to remove customers.   *** NOT QUITE CAN ONLY REMOVE NEW CUSTOMERS!! ***
-NOT DONE - Store managers should be able to remove customers.
 NOT DONE - Store managers should be able to check rentals back into available stock.
 NOT DONE - Create a filter dependant on product attributes (eg cars: hatchback/SUV/estate)
 

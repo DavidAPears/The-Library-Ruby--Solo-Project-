@@ -61,6 +61,14 @@ class Book
       return Book.new( results.first )
     end
 
+    def self.find_title( title )
+      sql = "SELECT * FROM books
+      WHERE title = $1"
+      values = [title]
+      results = SqlRunner.run( sql, values )
+      return Book.new( results.first )
+    end
+
   # UPDATE 'U'
 
     def update()

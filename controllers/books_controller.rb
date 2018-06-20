@@ -46,8 +46,14 @@ get '/books/:id/edit' do
 end
 
 # To search books by id
-get '/books/:id' do
-  @book = Book.find(params['id'].to_i)
+# get '/books/:id' do
+#   @book = Book.find(params['id'].to_i)
+#   erb(:"books/show")
+# end
+
+#To search books by title
+get '/books/:name' do
+  @book = Book.find_title(params['name'])
   erb(:"books/show")
 end
 

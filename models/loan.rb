@@ -96,5 +96,23 @@ class Loan
     SqlRunner.run( sql )
   end
 
+  def member()
+    sql = "SELECT * FROM members
+    WHERE id = $1"
+    values = [@member_id]
+    results = SqlRunner.run( sql, values )
+    return Member.new( results.first )
+  end
+
+  def book()
+    sql = "SELECT * FROM books
+    WHERE id = $1"
+    values = [@book_id]
+    results = SqlRunner.run( sql, values )
+    return Book.new( results.first )
+  end
+
+
+
 
 end

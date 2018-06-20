@@ -1,4 +1,5 @@
 COMPLETED TASKS:
+
 DONE - Store managers should be able to add new customers to their list of registered customers
 DONE - Store managers should be able to update the details of their existing customers.
 DONE - Store managers should be able to view a list of all of their rentals.
@@ -9,7 +10,10 @@ DONE - Store managers should be able to remove customers. [Customers can be DEAC
 HALF DONE - Store managers should be able to check rentals back into available stock. [They can check in, no stock count though]
 
 INCOMPLETE TASKS:
+
 NOT DONE - Create a filter dependant on product attributes (eg cars: hatchback/SUV/estate)
+
+
 
 
 

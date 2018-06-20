@@ -34,6 +34,12 @@ author3 = Author.new({
 
 author3.save()
 
+author4 = Author.new({
+  "author" => "Ernest Hemingway"
+})
+
+author4.save()
+
 # TABLE 2 - 'GENRES'
 
 genre1 = Genre.new({
@@ -53,6 +59,12 @@ genre3 = Genre.new({
 })
 
 genre3.save()
+
+genre4 = Genre.new({
+  "genre" => "Literary fiction"
+})
+
+genre4.save()
 
 # TABLE 3 - 'BOOKS'
 
@@ -80,37 +92,55 @@ book3 = Book.new({
 
 book3.save()
 
+book4 = Book.new({
+  "title" => "The Old Man and the Sea",
+  "author_id" => author4.id,
+  "genre_id" => genre4.id
+})
+
+book4.save()
+
 # TABLE 4 - 'MEMBERS'
 
 member1 = Member.new({
-  "first_name" => "David",
-  "last_name" => "Pears",
+  "first_name" => "Rick",
+  "last_name" => "Sanchez",
   "post_code" => "EH8 8EY",
-  "email_address" => "davidapears@gmail.com",
+  "email_address" => "wubalubadubdub@gmail.com",
   "active_membership" => true
 })
 
 member1.save()
 
 member2 = Member.new({
-  "first_name" => "Fred",
-  "last_name" => "Bloggs",
+  "first_name" => "Morty",
+  "last_name" => "Smith",
   "post_code" => "EH7 1SL",
-  "email_address" => "fredblogs@hotmail.com",
+  "email_address" => "ohjeez@ohjeezcom",
   "active_membership" => false
 })
 
 member2.save()
 
 member3 = Member.new({
-  "first_name" => "Jessica",
-  "last_name" => "Smith",
+  "first_name" => "Bird",
+  "last_name" => "Person",
   "post_code" => "EH2 3UT",
-  "email_address" => "jessica375@yahoo.co.uk",
+  "email_address" => "birdperson@birdworld.tv",
   "active_membership" => true
 })
 
 member3.save()
+
+member4 = Member.new({
+  "first_name" => "Million",
+  "last_name" => "Ants",
+  "post_code" => "EH3 6NS",
+  "email_address" => "ant@colony.com",
+  "active_membership" => true
+})
+
+member4.save()
 
 # TABLE 5 - 'LOANS'
 
@@ -143,6 +173,16 @@ loan3 = Loan.new({
 })
 
 loan3.save()
+
+loan4 = Loan.new({
+  "member_id" => member4.id,
+  "book_id" => book4.id,
+  "loan_start_date" => Time.now,
+  "loan_length" => 7,
+  "book_returned" => true
+})
+
+loan4.save()
 
 binding.pry
 nil

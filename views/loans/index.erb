@@ -18,7 +18,7 @@
 
 <table>
   <tr>
-    <th>Member</th>
+    <th>Surname</th>
     <th></th>
     <th>Book</th>
     <th></th>
@@ -36,7 +36,7 @@
   <% for loan in @loans %>
 
   <tr>
-    <td><a href="/members/<%= loan.member.first_name %>"><%= loan.member.first_name %></a></td>
+    <td><a href="/members/<%= loan.member.last_name %>"><%= loan.member.last_name %></a></td>
     <td>|</td>
     <td><a href="/members/<%= loan.book.title %>"><%= loan.book.title %></a></td>
     <td>|</td>

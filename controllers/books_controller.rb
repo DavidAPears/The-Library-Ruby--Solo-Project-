@@ -16,6 +16,8 @@ end
 
 get '/books/new' do
   @books = Book.all
+  @authors = Author.all
+  @genres = Genre.all
   erb(:"books/new")
 end
 

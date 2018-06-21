@@ -22,6 +22,14 @@ class Member
     @active_membership == 't' ? 'Yes' : 'No'
   end
 
+  # def full_name()
+  #   return "#{@first_name} #{@last_name}"
+  # end
+
+  def initialize(full_name)
+    @full_name = [@first_name, @last_name}
+  end
+
 # CREATE 'C'
 
   def save()

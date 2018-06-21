@@ -26,9 +26,9 @@ class Member
   #   return "#{@first_name} #{@last_name}"
   # end
 
-  def initialize(full_name)
-    @full_name = [@first_name, @last_name}
-  end
+  # def initialize(full_name)
+  #   @full_name = [@first_name, @last_name]
+  # end
 
 # CREATE 'C'
 

@@ -40,11 +40,11 @@
     <td>|</td>
     <td><a href="/members/<%= loan.book.title %>"><%= loan.book.title %></a></td>
     <td>|</td>
-    <td><a href="/loans/<%= loan.id %>"><%= loan.loan_start_date %></a></td>
+    <td><p><%= loan.loan_start_date %></p></td>
     <td>|</td>
     <td><%= loan.loan_length %></td>
     <td>|</td>
-    <td><a href="/loans/<%= loan.id %>"><%= loan.returned?%></a></td>
+    <td><p><%= loan.returned?%></p></td>
     <td>|</td>
     <td><a href="/loans/<%= loan.id %>/edit">
       <img src="/images/editicon.jpeg" alt="Edit" style="width:42px;height:42px;border:0" class="icon">

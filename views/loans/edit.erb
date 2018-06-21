@@ -1,19 +1,19 @@
 <form method="post" action="/loans/<%= @loan.id %>">
 
-  <label for="member-id-field">Member ID:</label>
+  <label for="member-id-field">Member Surname:</label>
   <input
   type="text"
   name="member_id"
   id="member-id-field"
-  value = "<%= @loan.member_id %>"
+  value = "<%= @loan.member.last_name %>"
   />
 
-  <label for="book-id-field">Book ID:</label>
+  <label for="book-id-field">Title:</label>
   <input
   type="text"
   name="book_id"
   id="book-id-field"
-  value = "<%= @loan.book_id %>"
+  value = "<%= @loan.book.title %>"
   />
 
   <label for="loan-start-date-field">Loan Start Date:</label>

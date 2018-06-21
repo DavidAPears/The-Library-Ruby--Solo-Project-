@@ -13,6 +13,11 @@ get '/members' do
   erb(:'members/index')
 end
 
+get '/members/:id' do
+  @member = Member.find(params['id'].to_i)
+  erb(:"members/show")
+end
+
 # To add new 'members'
 
 get '/members/new' do
@@ -66,7 +71,7 @@ post '/members/:id/deactivate' do
   redirect to("/members")
 end
 
-post '/members/:id' do
-  member =  Member.find(params[:id])
-  redirect to("/members")
-end
+# post '/members/:id' do
+#   member =  Member.find(params[:id])
+#   redirect to("/members")
+# end

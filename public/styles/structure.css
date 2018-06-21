@@ -1,5 +1,4 @@
 body {
-  background: black url('/images/library.jpg');
   background: black url('/images/bookbackground.jpg');
   background-size: cover;
   background-repeat: no-repeat center center fixed;
@@ -8,6 +7,7 @@ body {
   padding: 0px;
   margin: 0px;
 }
+
 
 .logo {
   background: white url('/images/logo.png');

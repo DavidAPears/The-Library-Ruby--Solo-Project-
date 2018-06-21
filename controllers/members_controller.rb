@@ -6,19 +6,19 @@ require_relative( '../models/loan.rb' )
 
 also_reload( '../models/*' )
 
-# To retrieve all members:
+# To add new members (i.e new member icon link):
 
 get '/members' do
   @members = Member.all()
   erb(:'members/index')
 end
 
-get '/members/:id' do
-  @member = Member.find(params['id'].to_i)
-  erb(:"members/show")
-end
+#This should link each member from this page to thier own opage...it doesn't work...
+# get '/members/:id' do
+#   @member = Member.find(params['id'].to_i)
+#   erb(:"members/show")
+# end
 
-# To add new 'members'
 
 get '/members/new' do
   @members = Member.all
